@@ -154,3 +154,37 @@ body {
     gap: 20px;
   }
 }
+
+
+
+
+/* 상단 네비게이션 바 설정 */
+nav {
+  max-width: 850px;       /* Research 섹션과 너비 통일 */
+  margin: 0 auto 40px auto; /* 중앙 정렬 및 아래 여백 */
+  display: flex;
+  gap: 20px;              /* 메뉴 간격 */
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb; /* 옅은 구분선 */
+}
+
+nav a {
+  text-decoration: none;  /* 밑줄 제거 */
+  color: #4b5563;         /* 차분한 회색 */
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background: #f3f4f6;    /* 마우스 올렸을 때 옅은 회색 배경 */
+  color: #111827;         /* 글자색 진해짐 */
+}
+
+/* 현재 머물고 있는 페이지 강조 표시용 클래스 */
+nav a.active {
+  color: #2563eb;
+  background: #eff6ff;
+}
