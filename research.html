@@ -1,58 +1,147 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seongdeok Ko - Publications</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Research by SeongDeok Ko, Assistant Professor of Finance at Gachon University."
+    />
+    <title>Research | SeongDeok Ko</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="site-name" href="index.html">SeongDeok Ko</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a class="active" href="research.html">Research</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="cv.html">CV</a>
+        </nav>
+      </div>
+    </header>
 
-  <main class="publications-container">
-    <section class="research-section">
-      <h2>Publications</h2>
+    <main>
+      <section class="page-hero container">
+        <p class="section-kicker">Research</p>
+        <h1>Research</h1>
+        <p>
+          My research is organized below into working papers, publications, and projects in progress.
+        </p>
+      </section>
 
-      <article class="paper">
-        <h3 class="paper-title">Characteristics-based reversals: Exploiting the gap between predicted and realized returns</h3>
-        <p class="paper-authors">Seongdeok Ko</p>
-        <p class="paper-venue">Finance Research Letters, Volume 85 (Part C), November 2025</p>
+      <section class="page-section container" id="working-papers">
+        <h2>Working Papers</h2>
+        <div class="paper-list">
+          <article class="paper">
+            <h3>Working paper title</h3>
+            <p class="paper-authors">SeongDeok Ko · Coauthor(s), if any</p>
+            <p class="paper-venue">Working Paper</p>
+            <div class="paper-links">
+              <a href="#">PDF</a>
+              <a href="#">SSRN</a>
+              <a href="#">Slides</a>
+            </div>
+            <details class="paper-abstract">
+              <summary>Abstract</summary>
+              <p>
+                This is a placeholder for a working paper abstract. The section is ready for the actual title, coauthors,
+                abstract, conference information, and paper links.
+              </p>
+            </details>
+          </article>
 
-        <div class="paper-links">
-          <a href="https://doi.org/10.1016/j.frl.2025.108081" target="_blank" rel="noopener">DOI</a>
-          <a href="https://www.sciencedirect.com/science/article/pii/S1544612325013388" target="_blank" rel="noopener">ScienceDirect</a>
+          <article class="paper">
+            <h3>Working paper title</h3>
+            <p class="paper-authors">SeongDeok Ko · Coauthor(s), if any</p>
+            <p class="paper-venue">Working Paper</p>
+            <div class="paper-links">
+              <a href="#">PDF</a>
+              <a href="#">SSRN</a>
+            </div>
+            <details class="paper-abstract">
+              <summary>Abstract</summary>
+              <p>
+                Add the paper abstract here when ready. Multiple working papers can be listed in exactly the same format.
+              </p>
+            </details>
+          </article>
         </div>
 
-        <details class="paper-abstract">
-          <summary>Abstract</summary>
-          <p>
-            This paper studies short-term return reversals implied by the mismatch between
-            characteristic-predicted return ranks and realized return ranks. A long–short strategy
-            exploiting large decile-level divergences earns strong gross returns, but profitability
-            is concentrated in small, illiquid, high-volatility stocks where transaction costs
-            meaningfully limit implementability.
-          </p>
-        </details>
-      </article>
+        <p class="placeholder-note">
+          The Working Papers section is intentionally prepared as a template. Replace the placeholder titles and links with current drafts when ready.
+        </p>
+      </section>
 
-      <article class="paper">
-        <h3 class="paper-title">Market anticipation and intraday trading: Evidence from BOJ ETF purchases</h3>
-        <p class="paper-authors">Seongdeok Ko</p>
-        <p class="paper-venue">Finance Research Letters, Volume 91, March 2026</p>
+      <section class="page-section container" id="publications">
+        <h2>Publications</h2>
+        <div class="paper-list">
+          <article class="paper">
+            <h3>Market anticipation and intraday trading: Evidence from BOJ ETF purchases</h3>
+            <p class="paper-authors">SeongDeok Ko</p>
+            <p class="paper-venue">Finance Research Letters, Volume 91, March 2026</p>
+            <div class="paper-links">
+              <a href="https://doi.org/10.1016/j.frl.2025.109421" target="_blank" rel="noopener noreferrer">DOI</a>
+              <a href="https://www.sciencedirect.com/science/article/pii/S1544612325026704" target="_blank" rel="noopener noreferrer">ScienceDirect</a>
+            </div>
+            <details class="paper-abstract">
+              <summary>Abstract</summary>
+              <p>
+                Using the Bank of Japan’s equity ETF purchase program as a natural experiment, we estimate intervention probabilities from intraday returns and examine their effects on Nikkei 225 futures. We find that markets internalize expected policy actions through execution timing and liquidity provision rather than price adjustment.
+              </p>
+            </details>
+          </article>
 
-        <div class="paper-links">
-          <a href="https://doi.org/10.1016/j.frl.2025.109421" target="_blank" rel="noopener">DOI</a>
-          <a href="https://www.sciencedirect.com/science/article/pii/S1544612325026704" target="_blank" rel="noopener">ScienceDirect</a>
+          <article class="paper">
+            <h3>Characteristics-based reversals: Exploiting the gap between predicted and realized returns</h3>
+            <p class="paper-authors">SeongDeok Ko</p>
+            <p class="paper-venue">Finance Research Letters, Volume 85 (Part C), November 2025</p>
+            <div class="paper-links">
+              <a href="https://doi.org/10.1016/j.frl.2025.108081" target="_blank" rel="noopener noreferrer">DOI</a>
+              <a href="https://www.sciencedirect.com/science/article/pii/S1544612325013388" target="_blank" rel="noopener noreferrer">ScienceDirect</a>
+            </div>
+            <details class="paper-abstract">
+              <summary>Abstract</summary>
+              <p>
+                This paper studies short-term return reversals implied by the mismatch between characteristic-predicted return ranks and realized return ranks. A long–short strategy exploiting large decile-level divergences earns strong gross returns, but profitability is concentrated in small, illiquid, high-volatility stocks where transaction costs meaningfully limit implementability.
+              </p>
+            </details>
+          </article>
         </div>
+      </section>
 
-        <details class="paper-abstract">
-          <summary>Abstract</summary>
-          <p>
-            Using the Bank of Japan’s (BOJ) equity ETF purchase program as a natural experiment, we estimate intervention probabilities from intraday returns and examine their effects on Nikkei 225 futures. We find that markets internalize expected policy actions through execution timing and liquidity provision rather than price adjustment.
-          </p>
-        </details>
-      </article>
-    </section>
-  </main>
+      <section class="page-section container" id="work-in-progress">
+        <h2>Work in Progress</h2>
+        <div class="simple-list">
+          <article class="simple-row">
+            <h3>Project title</h3>
+            <p>Short one-line description or coauthor information can be added here.</p>
+          </article>
+          <article class="simple-row">
+            <h3>Project title</h3>
+            <p>Short one-line description or coauthor information can be added here.</p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-</body>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SeongDeok Ko</p>
+        <a href="https://orcid.org/0009-0008-6709-0756" target="_blank" rel="noopener noreferrer">ORCID 0009-0008-6709-0756</a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
