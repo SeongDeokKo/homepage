@@ -3,52 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SeongDeok | Personal Homepage</title>
+    <meta
+      name="description"
+      content="Academic homepage of SeongDeok Ko, Assistant Professor of Finance at Gachon University."
+    />
+    <title>SeongDeok Ko | Finance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <nav class="nav container">
-        <a href="index.html#about">About</a>
-        <a href="cv.html">CV</a>
-        <a href="research.html">Research</a>
-      </nav>
-
-      <div class="hero-content container" id="about">
-        <img class="profile-image" src="assets/profile.jpg" alt="SeongDeok profile photo" onerror="this.onerror=null;this.src='assets/profile-placeholder.svg';" />
-        <div>
-          <p class="greeting">Hello,</p>
-          <h1>I am SeongDeok.</h1>
-          <p class="intro">
-            I study topics in finance and economics and use data-driven methods to analyze markets and institutions.
-            On this homepage, you can find my introduction, CV, and current research.
-          </p>
-          <div class="cta-links">
-            <a class="button" href="cv.html">View CV Page</a>
-            <a class="button button-secondary" href="research.html">View Research Page</a>
-          </div>
-        </div>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="site-name" href="index.html">SeongDeok Ko</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="active" href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="cv.html">CV</a>
+        </nav>
       </div>
     </header>
 
-    <main class="container">
-      <section class="card">
-        <h2>Welcome</h2>
-        <p>
-          This homepage now has dedicated pages for CV and Research so that each section can be maintained separately.
-          Use the navigation at the top to move between pages.
-        </p>
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow">Assistant Professor of Finance · Gachon University</p>
+          <h1>SeongDeok Ko</h1>
+          <p class="hero-intro">
+            I study topics in finance and economics and use data-driven methods to analyze markets and institutions.
+          </p>
+
+          <div class="link-row" aria-label="Profile links">
+            <a class="text-link" href="research.html">Research</a>
+            <a class="text-link" href="assets/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+            <a class="text-link" href="https://orcid.org/0009-0008-6709-0756" target="_blank" rel="noopener noreferrer">ORCID</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <img
+            class="profile-image"
+            src="assets/profile.jpg"
+            alt="Portrait of SeongDeok Ko"
+            onerror="this.onerror=null;this.src='assets/profile-placeholder.svg';"
+          />
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="research-overview-title">
+        <div class="section-heading">
+          <p class="section-kicker">Research</p>
+          <h2 id="research-overview-title">Current research</h2>
+          <p>
+            My research page is organized into working papers, publications, and ongoing projects.
+          </p>
+        </div>
+
+        <div class="overview-grid">
+          <a class="overview-card" href="research.html#working-papers">
+            <span class="overview-number">01</span>
+            <h3>Working Papers</h3>
+            <p>Drafts, abstracts, presentation information, and paper links.</p>
+          </a>
+          <a class="overview-card" href="research.html#publications">
+            <span class="overview-number">02</span>
+            <h3>Publications</h3>
+            <p>Published research with journal and article links.</p>
+          </a>
+          <a class="overview-card" href="research.html#work-in-progress">
+            <span class="overview-number">03</span>
+            <h3>Work in Progress</h3>
+            <p>Projects that are currently under development.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="section-heading compact">
+            <p class="section-kicker">Selected publications</p>
+            <h2>Recent research</h2>
+          </div>
+
+          <div class="publication-list">
+            <article class="publication-row">
+              <div>
+                <h3>Market anticipation and intraday trading: Evidence from BOJ ETF purchases</h3>
+                <p>Finance Research Letters, Volume 91, March 2026</p>
+              </div>
+              <a href="https://doi.org/10.1016/j.frl.2025.109421" target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            </article>
+
+            <article class="publication-row">
+              <div>
+                <h3>Characteristics-based reversals: Exploiting the gap between predicted and realized returns</h3>
+                <p>Finance Research Letters, Volume 85 (Part C), November 2025</p>
+              </div>
+              <a href="https://doi.org/10.1016/j.frl.2025.108081" target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            </article>
+          </div>
+
+          <a class="section-link" href="research.html">View all research →</a>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>© <span id="year"></span> SeongDeok. All rights reserved.</p>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SeongDeok Ko</p>
+        <a href="https://orcid.org/0009-0008-6709-0756" target="_blank" rel="noopener noreferrer">ORCID 0009-0008-6709-0756</a>
+      </div>
     </footer>
 
     <script>
