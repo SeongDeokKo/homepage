@@ -429,6 +429,34 @@ img {
     gap: 10px;
   }
 
+
+/* Award recognition */
+.paper-award {
+  margin: 12px 0 8px;
+  padding: 5px 0 5px 12px;
+  border-left: 3px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Presentation list */
+.presentation-list {
+  margin: 12px 0 4px;
+  padding-left: 24px;
+  color: #4b5563;
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.presentation-list li {
+  margin-bottom: 5px;
+}
+
+
+  
+
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;
