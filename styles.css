@@ -1,190 +1,436 @@
-/* 전체 레이아웃 설정 */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #ffffff;
+  --soft: #f7f8fa;
+  --text: #172033;
+  --muted: #667085;
+  --line: #e5e7eb;
+  --accent: #243b67;
+  --accent-soft: #eef2f8;
+  --max-width: 1080px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
-  padding: 40px 20px;
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
 }
 
-/* Research 섹션 컨테이너 */
-.research-section {
-  max-width: 850px;
-  margin: 0 auto 28px auto;
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  min-height: 72px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-.research-section h2 {
-  font-size: 1.75rem;
-  font-weight: 800;
-  margin: 0 0 12px 0;
-  color: #111827;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 8px;
-}
-
-/* 각 논문 카드 */
-.paper {
-  padding: 20px 24px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
-  background: #FAFAFA;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: all 0.2s ease-in-out;
-}
-
-.paper:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border-color: #2563eb;
-}
-
-.paper-title {
-  margin: 0 0 8px 0;
-  font-size: 1.2rem;
+.site-name {
+  text-decoration: none;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: #111827;
-  line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
-.paper-authors {
-  margin: 0 0 4px 0;
-  font-weight: 600;
-  color: #2563eb; /* 저자 강조색 */
+.nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.paper-venue {
-  margin: 0 0 12px 0;
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
   font-size: 0.95rem;
-  color: #6b7280;
-  font-style: italic;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 7px;
 }
 
-/* Abstract 토글 (Summary 스타일) */
+.nav a:hover,
+.nav a.active {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.hero {
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 72px;
+  align-items: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hero h1,
+.page-hero h1,
+.section-heading h2 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: -0.035em;
+  color: #111827;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5.1rem);
+  line-height: 0.98;
+}
+
+.hero-intro {
+  max-width: 720px;
+  margin: 28px 0 0;
+  font-size: 1.15rem;
+  color: #374151;
+}
+
+.link-row {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.text-link,
+.section-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.text-link:hover,
+.section-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hero-photo-wrap {
+  justify-self: end;
+}
+
+.profile-image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #dbe0e8;
+  box-shadow: 0 12px 40px rgba(17,24,39,0.08);
+}
+
+.section {
+  padding-top: 84px;
+  padding-bottom: 84px;
+}
+
+.section-soft {
+  background: var(--soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+  max-width: 730px;
+  margin-bottom: 36px;
+}
+
+.section-heading.compact {
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-heading p:not(.section-kicker),
+.page-hero p,
+.meta,
+.paper-venue,
+.paper-authors {
+  color: var(--muted);
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.overview-card {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  background: #fff;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 28px rgba(17,24,39,0.07);
+}
+
+.overview-number {
+  color: #98a2b3;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.overview-card h3 {
+  margin: 14px 0 8px;
+  font-size: 1.1rem;
+}
+
+.overview-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.publication-list,
+.paper-list,
+.simple-list {
+  border-top: 1px solid var(--line);
+}
+
+.publication-row,
+.paper,
+.simple-row {
+  border-bottom: 1px solid var(--line);
+  padding: 24px 0;
+}
+
+.publication-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: start;
+}
+
+.publication-row h3,
+.paper h3,
+.simple-row h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.publication-row p,
+.simple-row p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.publication-row > a {
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.section-link {
+  display: inline-block;
+  margin-top: 28px;
+}
+
+.page-hero {
+  padding-top: 88px;
+  padding-bottom: 52px;
+  max-width: 760px;
+}
+
+.page-hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2.6rem, 6vw, 4.3rem);
+  line-height: 1.05;
+}
+
+.page-section {
+  padding-top: 24px;
+  padding-bottom: 72px;
+}
+
+.page-section h2 {
+  margin: 0 0 14px;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+}
+
+.paper h3 {
+  font-size: 1.08rem;
+}
+
+.paper-authors,
+.paper-venue {
+  margin: 5px 0 0;
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.paper-links a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.paper-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .paper-abstract {
-  margin-top: 12px;
-  border-top: 1px solid #f3f4f6;
-  padding-top: 12px;
+  margin-top: 14px;
 }
 
 .paper-abstract summary {
   cursor: pointer;
-  font-weight: 600;
+  color: var(--muted);
+  font-weight: 700;
   font-size: 0.9rem;
-  color: #4b5563;
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-.paper-abstract summary::-webkit-details-marker {
-  display: none;
-}
-
-.paper-abstract summary::before {
-  content: "▸";
-  margin-right: 8px;
-  transition: transform 0.2s;
-}
-
-.paper-abstract[open] summary::before {
-  content: "▾";
 }
 
 .paper-abstract p {
-  margin: 10px 0 0 0;
-  font-size: 0.95rem;
-  background: #f8fafc;
-  padding: 15px;
-  border-radius: 8px;
-  color: #374151;
+  margin: 12px 0 0;
+  max-width: 820px;
+  color: #4b5563;
 }
 
-/* 링크 버튼 디자인 */
-.paper-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
+.placeholder-note {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 3px solid #cbd5e1;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 0.93rem;
 }
 
-.paper-links a {
-  font-size: 0.85rem;
-  font-weight: 600;
+.cv-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  max-width: 680px;
+}
+
+.primary-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: var(--accent);
+  color: #fff;
   text-decoration: none;
-  color: #2563eb;
-  background: #eff6ff;
-  padding: 6px 14px;
-  border-radius: 6px;
-  transition: background 0.2s;
+  border-radius: 8px;
+  font-weight: 700;
 }
 
-.paper-links a:hover {
-  background: #2563eb;
-  color: #ffffff;
+.site-footer {
+  padding: 30px 0 40px;
 }
 
-
-
-/* 프로필 이미지 사이즈 조절 */
-.profile-image {
-  width: 150px;         /* 사진 가로 크기 (원하시는 대로 조절하세요) */
-  height: 150px;        /* 세로 크기 고정 */
-  object-fit: cover;    /* 비율 유지하며 꽉 채움 */
-  border-radius: 50%;   /* 원형으로 만들기 (사각형이 좋으시면 삭제) */
-  border: 4px solid #fff; /* 사진 테두리 흰색 선 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 살짝 그림자 추가 */
-  margin-bottom: 20px;  /* 이미지와 아래 글자 사이 간격 */
-}
-
-/* 히어로 섹션 레이아웃 (사진과 글을 가로로 배치하고 싶을 때) */
-.hero-content {
+.footer-inner {
   display: flex;
-  align-items: center;  /* 세로 중앙 정렬 */
-  gap: 40px;           /* 사진과 글 사이 간격 */
-  padding: 60px 0;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.88rem;
 }
 
-/* 모바일에서는 사진이 다시 위로 가도록 설정 */
-@media (max-width: 768px) {
-  .hero-content {
+.footer-inner a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 800px) {
+  .nav-wrap {
+    align-items: flex-start;
     flex-direction: column;
-    text-align: center;
-    gap: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
-}
 
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 58px;
+    padding-bottom: 64px;
+  }
 
+  .hero-photo-wrap {
+    justify-self: start;
+    order: -1;
+  }
 
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
 
-/* 상단 네비게이션 바 설정 */
-nav {
-  max-width: 850px;       /* Research 섹션과 너비 통일 */
-  margin: 0 auto 40px auto; /* 중앙 정렬 및 아래 여백 */
-  display: flex;
-  gap: 20px;              /* 메뉴 간격 */
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e7eb; /* 옅은 구분선 */
-}
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
 
-nav a {
-  text-decoration: none;  /* 밑줄 제거 */
-  color: #4b5563;         /* 차분한 회색 */
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
+  .publication-row {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-nav a:hover {
-  background: #f3f4f6;    /* 마우스 올렸을 때 옅은 회색 배경 */
-  color: #111827;         /* 글자색 진해짐 */
-}
-
-/* 현재 머물고 있는 페이지 강조 표시용 클래스 */
-nav a.active {
-  color: #2563eb;
-  background: #eff6ff;
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
